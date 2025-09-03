@@ -9,5 +9,5 @@
 # A BIT ABOUT ME
 ## • I'm currently 23 years old
 ## • I'm from Mexico! ![Mexico](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/960px-Flag_of_Mexico.svg.png)
-## • My interests include SNORKEL, MUSIC, THEATER, VOICE ACTING, AND ANIMATION!
-
+## • My interests include HIKING, SNORKELING, MUSIC, THEATER, VOICE ACTING, AND ANIMATION! 🤿🎭🌿🎵🖼️
+![GIR](https://media1.tenor.com/m/-PcfSBnP6TkAAAAd/invader-zim.gif)
