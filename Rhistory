@@ -1,0 +1,512 @@
+scale_color_discrete(labels = etiquetas) +
+scale_fill_discrete(labels = etiquetas)
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+scale_color_discrete(labels = etiquetas) +
+scale_fill_discrete(labels = etiquetas)
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+scale_color_discrete(labels = etiquetas)
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333"))
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(labels = etiquetas),
+fill = guide_legend(labels = etiquetas))
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(title = FALSE , labels = etiquetas),
+fill = guide_legend(title = FALSE , labels = etiquetas))
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(title = "Variable" , labels = etiquetas),
+fill = guide_legend(title = "Variable" , labels = etiquetas))
+View(Aves_completa)
+# Cluster por variables ambientales
+cluster_aves <- scale(Aves_completa[,c("bio_01", "bio_07","bio_12")])
+kmeans_result <- kmeans(cluster_aves, centers = 3)
+#Creamos un vector para nombrar la escala
+etiquetas <- c("Temperatura promedio anual", "Rango de Temperatura", "Precipitación Anual")
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(title = "Variable" , labels = etiquetas),
+fill = guide_legend(title = "Variable" , labels = etiquetas))
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(labels = etiquetas, name = "Variable ambiental"),
+fill = guide_legend(labels = etiquetas, name = "Variable ambiental"))
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(title = "Grupos", labels = etiquetas, name = "Variable ambiental"),
+fill = guide_legend(title = "Grupos", labels = etiquetas, name = "Variable ambiental"))
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+scale_color_discrete(labels = etiquetas) +
+scale_fill_discrete(labels = etiquetas)
+fviz_cluster(kmeans_result, data = cluster_aves, palette  = c("#4B0055","#009796","#FDE333")) +
+guides(
+color = guide_legend(title = "Grupos", labels = etiquetas),
+fill = guide_legend(title = "Grupos", labels = etiquetas)
+)
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01))
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07))
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12))
+bxp3
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+))
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+))
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+))
+bxp3
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp3
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp3
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01, fill = bio_01)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp3
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01, fill = Gremio_trofico)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp1
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01, fill = Gremio_trofico)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_c(option = "viridis")
+bxp3
+# Boxplots por categorías
+bxp1 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_01, fill = Gremio_trofico)) +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp1
+bxp2 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_07, fill = Gremio_trofico))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp2
+bxp3 <- ggplot2::ggplot(Aves_completa) +
+geom_boxplot(aes(x = Gremio_trofico, y = bio_12, fill = Gremio_trofico))  +
+theme(axis.text.x = element_text(
+angle = 45,
+hjust = 1
+)) +
+scale_fill_viridis_d(option = "viridis")
+bxp3
+bxp_T <-  wrap_plots(bxp1, bxp2, bxp3, ncol = 3) +
+plot_annotation(
+title = "Distribución del Grupo trófico por Variable ambiental"
+)
+# Guardar el gráfico con alta resolución
+ggsave(filename = "bxp_T.png",   plot = bxp_T, width = 10,height = 7, dpi = 400,units = "in", bg = "white")
+# Guardar el gráfico con alta resolución
+ggsave(filename = "bxp_T.png",   plot = bxp_T, width = 5,height = 10, dpi = 400,units = "in", bg = "white")
+# Guardar el gráfico con alta resolución
+ggsave(filename = "bxp_T.png",   plot = bxp_T, width = 20,height = 5, dpi = 400,units = "in", bg = "white")
+![](bxp_T.png)
+## Mapas de distribución de condiciones ambientales por gremio trófico
+ggplot(Aves_completa) +
+geom_point(aes(x = bio_01, y = bio_12,
+color = Gremio_trofico, size = No_observaciones)) +
+facet_wrap(~UICN) +
+scale_color_viridis_d(option = "viridis")
+ggplot(data = c(diversidad1,diversidad2,diversidad3), aes(x = "Categoría", y = "Diversidad")) +
+barplot()+
+scale_fill_viridis()
+ggplot(data = c(diversidad1,diversidad2,diversidad3), aes(x = "Categoría", y = "Diversidad")) +
+geom_bar()+
+scale_fill_viridis()
+# Primero combinar los dataframes correctamente
+diversidades <- bind_rows(
+diversidad1 %>% mutate(grupo = "Gremio Trófico"),
+diversidad2 %>% mutate(grupo = "Ambiente"),
+diversidad3 %>% mutate(grupo = "Origen")
+)
+# Primero combinar los dataframes correctamente
+diversidades <- data.frame(
+Categoría = c(rep("Gremio Trófico", length(diversidad1)),
+rep("Ambiente", length(diversidad2)),
+rep("Origen", length(diversidad3))),
+Diversidad = c(diversidad1, diversidad2, diversidad3)
+)
+ggplot(data = diversidades, aes(x = Categoría, y = Diversidad, fill = Categoría)) +
+geom_bar(stat = "identity") +
+scale_fill_viridis_d() +  # _d para variables discretas
+labs(x = "Categoría", y = "Diversidad")
+ggplot(data = diversidades, aes(x = Categoría, y = Diversidad, fill = Categoría)) +
+geom_bar(stat = "identity") +
+scale_fill_viridis_d() +  # _d para variables discretas
+labs(title = "Diversidad por Categoría", x = "Categoría", y = "Diversidad")
+Aves_numerico <- read.csv("Aves_numerica.csv")
+data1 <- Aves_numerica[, c(2,3,4,13,11,12)]# Solo las variables numéricas
+# Realizar PCA 1 (sin observaciones)
+pca1 <- prcomp(data1, scale = TRUE)  # scale = TRUE para estandarizar
+pca1
+summary(pca1)
+#Biplot
+autoplot(pca1, data1 = Aves_numerico, #colour = 'Species',
+loadings = TRUE, loadings.colour = 'darkgreen',
+loadings.label = TRUE, loadings.label.size = 3) +
+theme_minimal()+
+labs( title = "PCA sin considerar las observaciones", subtitle = "Datos extraidos de CONABIO y GBIF")
+#Biplot
+autoplot(pca1, data1 = Aves_numerico, #colour = 'Species',
+loadings = TRUE, loadings.colour = '#481C66',
+loadings.label.colour = 'black',
+loadings.label = TRUE, loadings.label.size = 3) +
+theme_minimal()+
+labs( title = "PCA sin considerar las observaciones", subtitle = "Datos extraidos de CONABIO y GBIF")
+#Realizar PCA 2 (con observaciones)
+data2 <- Aves_numerica[, c(2,3,4,6,13,11,12)]
+pca2 <- prcomp(data2, scale = TRUE)  # scale = TRUE para estandarizar
+pca2
+summary(pca2)
+#Biplot
+autoplot(pca2, data2 = Aves_completa, #colour = 'Species',
+loadings = TRUE, loadings.colour = 'darkgreen',
+loadings.label.colour = 'black',
+loadings.label = TRUE, loadings.label.size = 3) +
+theme_minimal()+
+labs( title = "PCA considerando observaciones", subtitle = "Datos extraidos de CONABIO y GBIF")
+#Biplot
+autoplot(pca2, data2 = Aves_completa, #colour = 'Species',
+loadings = TRUE, loadings.colour = '#481C66',
+loadings.label.colour = 'black',
+loadings.label = TRUE, loadings.label.size = 3) +
+theme_minimal()+
+labs( title = "PCA considerando observaciones", subtitle = "Datos extraidos de CONABIO y GBIF")
+#Ahora vamos a visualizar los datos
+Ca_au_sp <- occ_search(
+scientificName = "Cathartes aura",
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE
+)$data
+library(tidyverse) #Conjunto de paquetes para manipulación y visualización de datos
+library(ggplot2) #(incluido en tidyverse) - Sistema de gráficos elegantes
+library(patchwork) #Combinar múltiples gráficos en uno
+library(ggcorrplot) #Visualización de matrices de correlación
+library(ggfortify) #Visualización de resultados de análisis multivariado
+library(paletteer) #Colección completa de paletas de colores
+library(viridis) #Paleta de colores específica
+library(grid) #Sistema gráfico de bajo nivel
+library(magick) #Manipulación de imágenes
+library(sf) #Trabajar con datos vectoriales (puntos, líneas, polígonos)
+library(terra) #Manipulación de datos raster (imágenes satelitales, modelos digitales)
+library(tidyterra) #Integración entre terra y tidyverse
+library(geodata) #Descargar datos geoespaciales (clima, elevación, etc.)
+library(rworldxtra) #Mapas mundiales de alta resolución
+library(ggspatial) #Elementos para mapas (escalas, norte, etc.)
+library(rgbif) #Acceder a datos de Global Biodiversity Information Facility (GBIF)
+library(vegan) #Análisis ecológicos y de comunidades (diversidad, ordenación)
+library(factoextra) #Visualización de resultados de análisis multivariado
+library(FactoMineR) #Análisis de componentes principales (PCA) y multivariado
+#PENDIENTE
+library(ggridges) #Gráficos de distribución tipo "ridge"
+library(plotly) #Gráficos interactivos
+#Ahora vamos a visualizar los datos
+Ca_au_sp <- occ_search(
+scientificName = "Cathartes aura",
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE
+)$data
+Ca_au_sp <- Ca_au_sp %>%
+filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))
+wcg_h <- worldclim_global(var="elev", res=5, path=tempdir())
+data(countriesHigh)
+Mundo <- st_as_sf(countriesHigh)
+Ca_au_sp_sf <- st_as_sf(Ca_au_sp,
+coords = c("decimalLongitude", "decimalLatitude"),
+crs = 4326)  # WGS84
+ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_au_sp_sf, color = "red4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_paletteer_c("grDevices::terrain.colors",
+limits = c(0, 5000),
+na.value = "transparent") +
+labs(title = "Distribución de Cathartes aura",
+fill = "Elevación (m)") +
+theme_minimal()
+ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_au_sp_sf, color = "red4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_paletteer_c("viridis::viridis",
+limits = c(0, 5000),
+na.value = "transparent") +
+labs(title = "Distribución de Cathartes aura",
+fill = "Elevación (m)") +
+theme_minimal()
+map1 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_au_sp_sf, color = "red4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_paletteer_c("viridis::viridis",
+limits = c(0, 5000),
+na.value = "transparent") +
+labs(title = "Distribución de Cathartes aura",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map1, file = "map1.png")
+map1 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_au_sp_sf, color = "red4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_paletteer_c("viridis::viridis",
+limits = c(0, 5000),
+na.value = "transparent") +
+labs(title = "Distribución de Cathartes aura",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map1, file = "map1.png")
+map1 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_au_sp_sf, color = "red4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_paletteer_c("grDevices::terrain.colors",
+limits = c(0, 5000),
+na.value = "transparent") +
+labs(title = "Distribución de Cathartes aura",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map1, file = "map1.png")
+#Graficación simple
+map1 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_au_sp_sf, color = "red4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_viridis_c(
+limits = c(0, 5000),
+na.value = "transparent",
+option = "viridis"
+) +
+labs(title = "Distribución de Cathartes aura",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map1, file = "map1.png")
+# Ortalis vetula
+Or_ve_sp <- occ_search(
+scientificName = "Ortalis vetula",
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE
+)$data
+Or_ve_sp <- Or_ve_sp %>%
+filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))
+Or_ve_sp_sf <- st_as_sf(Or_ve_sp,
+coords = c("decimalLongitude", "decimalLatitude"),
+crs = 4326) #WGS84
+map2 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Or_ve_sp_sf, color = "red", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_viridis_c(
+limits = c(0, 5000),
+na.value = "transparent",
+option = "viridis"
+) +
+labs(title = "Distribución de Ortalis vetula",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map2, file = "map2.png")
+#Piana cayana
+Pi_ca_sp <- occ_search(
+scientificName = "Piaya cayana",
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE
+)$data
+Pi_ca_sp <- Pi_ca_sp %>%
+filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))
+Pi_ca_sp_sf <- st_as_sf(Pi_ca_sp,
+coords = c("decimalLongitude", "decimalLatitude"),
+crs = 4326) #WGS84
+map3 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Pi_ca_sp_sf, color = "orange", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_viridis_c(
+limits = c(0, 5000),
+na.value = "transparent",
+option = "viridis"
+) +
+labs(title = "Distribución de Piaya cayana",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map3, file = "map3.png")
+#Campylorhynchus rufinucha
+Ca_ru_sp <- occ_search(
+scientificName = "Campylorhynchus rufinucha",
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE
+)$data
+Ca_ru_sp <- Ca_ru_sp %>%
+filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))
+Ca_ru_sp_sf <- st_as_sf(Ca_ru_sp,
+coords = c("decimalLongitude", "decimalLatitude"),
+crs = 4326) #WGS84
+map4 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Ca_ru_sp_sf, color = "yellow4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_viridis_c(
+limits = c(0, 5000),
+na.value = "transparent",
+option = "viridis"
+) +
+labs(title = "Distribución de Campylorhynchus rufinucha",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map4, file = "map4.png")
+#Momotus coeruliceps
+Mo_co_sp <- occ_search(
+scientificName = "Momotus coeruliceps",
+hasCoordinate = TRUE,
+hasGeospatialIssue = FALSE
+)$data
+Mo_co_sp <- Mo_co_sp %>%
+filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))
+Mo_co_sp_sf <- st_as_sf(Mo_co_sp,
+coords = c("decimalLongitude", "decimalLatitude"),
+crs = 4326) #WGS84
+map5 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Mo_co_sp_sf, color = "purple4", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_viridis_c(
+limits = c(0, 5000),
+na.value = "transparent",
+option = "viridis"
+) +
+labs(title = "Distribución de Momotus coeruliceps",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map5, file = "map5.png")
+map5 <- ggplot() +
+geom_spatraster(data = wcg_h, aes(fill = after_stat(value)), maxcell = Inf) +
+geom_sf(data = Mo_co_sp_sf, color = "pink", size = 1, alpha = 0.7) +
+coord_sf(xlim = c(-120, -77), ylim = c(10, 32)) +
+scale_fill_viridis_c(
+limits = c(0, 5000),
+na.value = "transparent",
+option = "viridis"
+) +
+labs(title = "Distribución de Momotus coeruliceps",
+fill = "Elevación (m)") +
+theme_minimal()
+ggsave(map5, file = "map5.png")
